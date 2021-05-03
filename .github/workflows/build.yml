@@ -1,6 +1,6 @@
 name: Build and Test
 
-  # Triggers the workflow on push or pull request events but only for the master branch
+# Triggers the workflow on push or pull request events but only for the master branch
 on:
   push:
     branches: [ master ]
@@ -12,9 +12,24 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repo
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Install Node Modules
         run: npm install
       - name: Karma Tests
         run: npm run test:ci
+
+      - name: Configure Git
+        run: |
+          git config user.email "public+github@lotech.info"
+          git config user.name "Coverage Reporter"
+          git checkout coverage --
+      - name: Publish test coverage report
+        run: |
+          cp -r coverage/swapi-client docs/
+          git add .
+          git commit -m "Publish coverage report."
+          git push origin coverage
