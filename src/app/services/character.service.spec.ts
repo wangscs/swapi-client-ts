@@ -1,18 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule} from '@angular/common/http/testing';
-import { CharacterService } from './character.service';
+import { CharacterService, ApiResponse } from './character.service';
 
 import { Observable, of } from "rxjs";
-import Character from '../models/Character';
 
+import Character from '../models/Character';
 import characters from "../Character.json";
 
 describe('CharacterService', () => {
   let service: CharacterService;
   let httpClientSpy: {get: jasmine.Spy};
   let httpTestingController: HttpClientTestingModule;
+  
   beforeEach(() => {
-    TestBed.configureTestingModule({imports:[HttpClientTestingModule]});
+    TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
+    });
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = TestBed.inject(CharacterService);
     httpTestingController = TestBed.get(HttpClientTestingModule);
@@ -33,4 +36,17 @@ describe('CharacterService', () => {
     })
 
   });
+
+  it('getCharacters should be defined and return the list of characters', () => {
+    const listOfCharacters: Character[] = characters;
+
+    httpClientSpy.get.and.returnValue(of(listOfCharacters));
+    expect(service.getCharacters()).toBeDefined();
+
+    service.getCharacters(1).subscribe((data)=>{
+      expect(data.results).toEqual(listOfCharacters);
+    });
+  });
+  
+
 });
