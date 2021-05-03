@@ -27,7 +27,7 @@ describe('SpeciesService', () => {
     httpClientSpy.get.and.returnValue(of(species));
     service.getAll().subscribe(data => {
       expect(data.results[0].name).toContain('Human');
-      expect(data.results[1].name).toContain('Driod');
+      expect(data.results[1].name).toContain('Droid');
       expect(data.results[2].name).toContain('Wookie');
     });
   });
