@@ -36,7 +36,7 @@ describe('SpeciesService', () => {
     service.getById(1).subscribe(data => {
       expect(data.name).toContain('Human');
       expect(data.classification).toContain('mammal');
-      expect(data.designation).toContain('sentient');      
+      expect(data.designation).toContain('sentient');
     });
   });
 });
