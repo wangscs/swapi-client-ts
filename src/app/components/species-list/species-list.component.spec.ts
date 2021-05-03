@@ -28,9 +28,4 @@ describe('SpeciesListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  it('should route to species list component', () => {
-    
-    expect(component).toBeTruthy();
-  });
 });
