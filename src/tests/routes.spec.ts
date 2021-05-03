@@ -19,4 +19,10 @@ describe('App Routes', () => {
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
   });
+
+  it('should navigate to species component', fakeAsync(() => {
+    router.navigate(['species']);
+    tick();
+    expect(location.path()).toBe('/species');
+  }));
 });
