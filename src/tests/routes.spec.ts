@@ -19,11 +19,4 @@ describe('App Routes', () => {
     router = TestBed.inject(Router);
     location = TestBed.inject(Location);
   });
-
-  it('navigate to /home', fakeAsync(() => {
-    router.navigate(['home']);
-    tick();
-    expect(location.path()).toBe('');
-  }));
-
 });
