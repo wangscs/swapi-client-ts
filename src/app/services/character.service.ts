@@ -25,9 +25,8 @@ export class CharacterService implements CharacterServiceAbstract {
   getCharacter(id : number = 1) : Observable<Character> {
     return this.http.get<Character>(`${this.apiUrl}/${id}`);
   }
-
+  
   getCharacters(page: number = 1) : Observable<ApiResponse> {
     return this.http.get<ApiResponse>(`${this.apiUrl}/?page=${page}`)
   }
-
 }

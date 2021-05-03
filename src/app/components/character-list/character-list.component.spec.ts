@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CharacterListComponent } from './character-list.component';
+import  Character  from '../../models/Character';
+import characterArray from '../../Character.json';
 
 describe('CharacterListComponent', () => {
   let component: CharacterListComponent;
   let fixture: ComponentFixture<CharacterListComponent>;
   let html;
-
-  const character = {name : "Obi Wan"};
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -20,6 +20,7 @@ describe('CharacterListComponent', () => {
     fixture = TestBed.createComponent(CharacterListComponent);
     component = fixture.componentInstance;
     html = fixture.nativeElement;
+    component.characterList = characterArray as Character[];
     fixture.autoDetectChanges();
   });
 
@@ -28,9 +29,6 @@ describe('CharacterListComponent', () => {
   });
 
   it("should display characters from a list", () =>{
-    expect(html.querySelector('app-character')).toBeFalsy();
-    component.characterList.push(character);
-    fixture.detectChanges();
     expect(html.querySelector('app-character')).toBeTruthy();
   })
 
