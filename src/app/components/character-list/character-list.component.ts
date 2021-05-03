@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Character from '../../models/Character';
 
 @Component({
   selector: 'app-character-list',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterListComponent implements OnInit {
 
-  characterList : any[];
+  characterList : Character[];
 
   constructor() {
     this.characterList = [];
