@@ -4,15 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
-import { CharacterComponent } from './components/character/character.component';
-import { CharacterListComponent } from './components/character-list/character-list.component';
+
+import { SpeciesListComponent } from './components/species-list/species-list.component';
+import { CharacterComponent } from './character/character.component';
+import { CharacterListComponent } from './character-list/character-list.component';
+import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
+import { SpeciesPageComponent } from './components/species-page/species-page.component';
 
 @NgModule({
   declarations: [
     LandingPageComponent,
-    NavComponent, 
+    NavComponent,
+    SpeciesListComponent,
     CharacterComponent,
-    CharacterListComponent
+    CharacterListComponent,
+    SpeciesDetailsComponent,
+    SpeciesPageComponent,
   ],
   imports: [
     AppRoutingModule,
