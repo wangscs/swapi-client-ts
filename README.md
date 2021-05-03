@@ -1,27 +1,64 @@
-# SwapiClient
+# Star Wars Galaxy 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
+SWAPI is an open Star Wars API that you'll use to build a fan app. 
+* [Star Wars API](https://swapi.dev/documentation)
 
-## Development server
+## Instructions
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Fork this repository.
+1. Share your fork with your team. 
+1. Submit pull requests (PR) when you're done with a task.
+1. Review a PR before you start the next task.
+1. Repeat.
 
-## Code scaffolding
+The goal is to practice the development cycle: collaborate, plan, develop and review. Instructors will review and merge all PRs throughout the day, providing feedback on your code. If you need help with your code, use the PR process to discuss it with the team or swarm the problem together. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Your team should manage your own planning and create your own tasks. You can meet at any time in any available room. 
 
-## Build
+## Stories and AC 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Remember: your team should break down each story and/or criteria into discreet tasks. Then you can share those tasks to get the work done. 
 
-## Running unit tests
+**People, Starships and Vehicles**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+As a user, I can browse the characters of the Star Wars universe so that I can nerd out about them. 
 
-## Running end-to-end tests
+```gherkin
+Given I'm viewing the homepage
+When I navigate to characters 
+Then I can view them all 
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Given I'm viewing all characters 
+When I select a character 
+Then I can view a page with all of their details
 
-## Further help
+Given I'm viewing a character 
+When I hover over their image 
+Then I can hear them say "hello"!
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Given I enter a search query for characters
+When I submit the form 
+Then I can view the search results 
+```
+
+**Species and Planets**
+
+As a user, I can browse the planets of the Star Wars universe so that I can nerd out about them. 
+
+```gherkin
+Given I'm viewing the homepage
+When I navigate to planets 
+Then I can view them all 
+
+Given I'm viewing all planets 
+When I select a planet 
+Then I can view a page with all of their details
+
+Given I'm viewing a planet 
+When I hover over their image 
+Then I can hear a a bubble "pop"
+
+Given I enter a search query for planets  
+When I submit the form 
+Then I can view the search results 
+```
