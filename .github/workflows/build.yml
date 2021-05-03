@@ -21,16 +21,3 @@ jobs:
         run: npm install
       - name: Karma Tests
         run: npm run test:ci
-
-      - name: Configure Git
-        run: |
-          git config user.email "public+github@lotech.info"
-          git config user.name "Coverage Reporter"
-          git stash
-          git checkout coverage --
-      - name: Publish test coverage report
-        run: |
-          cp -r coverage/swapi-client docs/
-          git add .
-          git commit -m "Publish coverage report."
-          git push origin coverage
