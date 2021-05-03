@@ -1,5 +1,7 @@
 # Star Wars Galaxy 
 
+[![Build & Test](https://github.com/Tech-Student-Labs/swapi-client-ts/actions/workflows/build.yml/badge.svg)](https://tech-student-labs.github.io/swapi-client-ts/)
+
 SWAPI is an open Star Wars API that you'll use to build a fan app. 
 * [Star Wars API](https://swapi.dev/documentation)
 
