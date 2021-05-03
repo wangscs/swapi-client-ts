@@ -26,6 +26,18 @@ export class SpeciesService {
     return this.http.get<ApiResponse>(this.apiURL);
   }
   
+  getById(id: number): Observable<any>{
+    return this.http.get(this.apiURL + id);
+  }
+
+  getNextPage(){
+    
+  }
+  
+  getPrevPage(){
+    
+  }
+  
 }
 
 
