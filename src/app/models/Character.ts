@@ -1,6 +1,6 @@
 export default interface Character {
     name: string,
-    height?: string,
+    height: string,
     mass: string,
     hair_color: string,
     skin_color: string,
