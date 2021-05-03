@@ -7,6 +7,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { SpeciesListComponent } from './components/species-list/species-list.component';
 import { CharacterComponent } from './character/character.component';
 import { CharacterListComponent } from './character-list/character-list.component';
+import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
+import { SpeciesPageComponent } from './components/species-page/species-page.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { CharacterListComponent } from './character-list/character-list.componen
     SpeciesListComponent,
     CharacterComponent,
     CharacterListComponent,
+    SpeciesDetailsComponent,
+    SpeciesPageComponent,
   ],
   imports: [
     AppRoutingModule,
