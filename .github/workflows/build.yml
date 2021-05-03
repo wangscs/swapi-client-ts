@@ -26,6 +26,7 @@ jobs:
         run: |
           git config user.email "public+github@lotech.info"
           git config user.name "Coverage Reporter"
+          git stash
           git checkout coverage --
       - name: Publish test coverage report
         run: |
