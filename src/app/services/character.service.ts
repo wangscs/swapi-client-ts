@@ -2,11 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import Character from "../models/Character";
-import { CharacterServiceAbstract } from '../tests/data/character-service-abstract';
-import ApiResponse from "../shared/ApiResponse";
 import { tap, map } from 'rxjs/operators'; 
-
-import { jsonCharacter, convertCharacter } from "../shared/utilities";
+import ApiResponse from '../shared/ApiResponse';
+import { convertCharacter, jsonCharacter } from '../shared/utilities';
 
   @Injectable({
     providedIn: 'root'

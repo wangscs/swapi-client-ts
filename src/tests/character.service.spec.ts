@@ -3,11 +3,11 @@ import { HttpClientTestingModule} from '@angular/common/http/testing';
 
 import { of } from "rxjs";
 
-import Character from '../models/Character';
-import characters from "./data/Character.json";
-import { CharacterService } from '../services/character.service';
+import Character from '../app/models/Character';
+import characters from "../app/tests/data/Character.json";
+import { CharacterService } from '../app/services/character.service';
 
-import { convertCharacter } from "../shared/utilities";
+import { convertCharacter } from "../app/shared/utilities";
 
 describe('CharacterService', () => {
   let service: CharacterService;

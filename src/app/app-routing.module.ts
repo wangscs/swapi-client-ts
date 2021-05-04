@@ -8,7 +8,7 @@ import { PlanetsListComponent } from './components/planets-list/planets-list.com
 export const routes: Routes = [
     {
       path: 'people',
-      loadChildren: () => import('src/app/modules/character.module').then(mod => mod.CharacterModule),
+      loadChildren: () => import('./modules/character.module').then(mod => mod.CharacterModule),
     },
     {
     path: 'species',

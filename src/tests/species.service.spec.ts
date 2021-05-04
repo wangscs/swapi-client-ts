@@ -1,9 +1,10 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+import { SpeciesService } from 'src/app/services/species.service';
 import species from 'src/app/tests/data/Species.json';
 
-import { SpeciesService } from '../services/species.service';
+
 
 describe('SpeciesService', () => {
   let service: SpeciesService;
