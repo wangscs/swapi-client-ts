@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { Planets } from '../models/planets';
 import { PlanetMockServiceService } from './planet-mock-service.service';
 
 import { PlanetService } from './planet.service';
@@ -27,15 +26,15 @@ const APIResponse1: {} = {
   surface_water: "1",
   terrain: "Dessert",
   url: "https://swapi.dev/api/planets/1/"
-}
+};
 
 describe('PlanetService', () => {
   let service: PlanetService;
-  let httpServiceSpy: {get: jasmine.Spy };
+  let httpServiceSpy: { get: jasmine.Spy };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ { provide: PlanetService, useClass: PlanetMockServiceService }]
+      providers: [{provide: PlanetService, useClass: PlanetMockServiceService}]
     });
     httpServiceSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = TestBed.inject(PlanetService);
@@ -46,9 +45,11 @@ describe('PlanetService', () => {
   });
 
   it('should get the information of the planet', () => {
-    let planets: Planets = new Planets();
+    // let planets: Planets = new Planets();
     httpServiceSpy.get.and.returnValue(of(APIResponse1));
-    service.getAll().subscribe( data => {
+    service.getAll().subscribe(data => {
       expect(data.results).toEqual(service.planets);
-  })});
+    });
+  });
 });
+

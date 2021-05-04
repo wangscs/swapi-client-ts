@@ -1,6 +1,6 @@
 <div class="container text-center">
-    <h1 id="title">Planets in a Galexy far far away...</h1>
+    <h1 id="title">Planets in a Galaxy far far away...</h1>
 </div>
-<div id="content">
-
+<div>
+    <app-planet *ngFor="let planet of planets" [planet]="planet"></app-planet>
 </div>

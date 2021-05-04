@@ -1,0 +1,7 @@
+<div id="content">
+    <div id="Planets-List" class="row itemBlock">
+        <div class="itemContainer col-md-3 col-sm-6 col-12" *ngFor="let planet of planets" [planet] = "planet">
+            <a id="planet-name">{{planet.name}}</a>
+        </div>
+    </div>
+</div>
