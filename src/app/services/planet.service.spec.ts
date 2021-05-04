@@ -26,7 +26,7 @@ const APIResponse1: {} = {
   surface_water: "1",
   terrain: "Dessert",
   url: "https://swapi.dev/api/planets/1/"
-}
+};
 
 describe('PlanetService', () => {
   let service: PlanetService;
