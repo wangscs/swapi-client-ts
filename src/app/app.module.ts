@@ -12,6 +12,8 @@ import { CharacterListComponent } from './components/character-list/character-li
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 import { SpeciesPageComponent } from './components/species-page/species-page.component';
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
+import { SpeciesService } from './services/species.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { PlanetsListComponent } from './components/planets-list/planets-list.com
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [LandingPageComponent]
