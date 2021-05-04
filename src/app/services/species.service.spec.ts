@@ -2,17 +2,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import species from '../Species.json';
-
 import { SpeciesService } from './species.service';
 
 describe('SpeciesService', () => {
   let service: SpeciesService;
-  let httpClientSpy: {get: jasmine.Spy};
+  let httpClientSpy: { get: jasmine.Spy };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientModule ],
-      providers: [ HttpClient ],
+      imports: [HttpClientModule],
+      providers: [HttpClient],
     });
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new SpeciesService(httpClientSpy as any);
@@ -25,18 +24,15 @@ describe('SpeciesService', () => {
   it('should get all species objects', () => {
     httpClientSpy.get.and.returnValue(of(species));
     service.getAll().subscribe(data => {
-      expect(data.results[0].name).toContain('Human');
-      expect(data.results[1].name).toContain('Droid');
-      expect(data.results[2].name).toContain('Wookie');
+      expect(data.results[1]).toEqual(species.results[1]);
+      expect(data.results.length).toEqual(3);
     });
   });
 
   it('should get a species by id', () => {
-    httpClientSpy.get.and.returnValue(of(species[0]));
-    service.getById(1).subscribe(data => {
-      expect(data.name).toContain('Human');
-      expect(data.classification).toContain('mammal');
-      expect(data.designation).toContain('sentient');
+    httpClientSpy.get.and.returnValue(of(species.results[0]));
+    service.getById(0).subscribe(data => {
+      expect(data).toEqual(species.results[0]);
     });
   });
 });

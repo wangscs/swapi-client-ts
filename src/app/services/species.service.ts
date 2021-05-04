@@ -10,7 +10,6 @@ export interface ApiResponse {
   results: Species[];
 }
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,22 +21,19 @@ export class SpeciesService {
 
   constructor(public http: HttpClient) { }
 
-  getAll(): Observable<ApiResponse>{
+  getAll(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.apiURL);
   }
-  
-  getById(id: number): Observable<any>{
+
+  getById(id: number): Observable<any> {
     return this.http.get(this.apiURL + id);
   }
 
-  getNextPage(){
-    
+  getNextPage() {
+    return null;
   }
-  
-  getPrevPage(){
-    
+
+  getPrevPage() {
+    return null;
   }
-  
 }
-
-
