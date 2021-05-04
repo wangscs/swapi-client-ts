@@ -29,17 +29,10 @@ describe('SpeciesService', () => {
   });
 
   it('should get a species by id', () => {
-    let index = getIndex(species.results[0].url);
-
+    let index = 1;
     httpClientSpy.get.and.returnValue(of(species.results[index]));
-    service.getById(getIndex(species.results[0].url)).subscribe(data => {
+    service.getById(index).subscribe(data => {
       expect(data).toEqual(species.results[index]);
     });
   });
 });
-
-function getIndex(url: string): number {
-  let indexURL = url.slice(0, -1);
-  let lastSlash: number = indexURL.lastIndexOf('/');
-  return +indexURL.slice(lastSlash + 1);
-}
