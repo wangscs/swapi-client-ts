@@ -19,7 +19,7 @@ export class SpeciesService {
 
   public apiURL = 'https://swapi.dev/api/species/';
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getAll(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.apiURL);
@@ -27,13 +27,5 @@ export class SpeciesService {
 
   getById(id: number): Observable<any> {
     return this.http.get(this.apiURL + id);
-  }
-
-  getNextPage() {
-    return null;
-  }
-
-  getPrevPage() {
-    return null;
   }
 }
