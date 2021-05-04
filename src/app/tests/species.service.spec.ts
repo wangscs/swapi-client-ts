@@ -1,9 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { SpeciesService } from 'src/app/services/species.service';
-import species from 'src/app/tests/data/Species.json';
-
+import { SpeciesService } from '../services/species.service';
+import species from '../tests/data/Species.json';
 
 
 describe('SpeciesService', () => {
@@ -12,7 +11,7 @@ describe('SpeciesService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule]
+      imports: [HttpClientTestingModule]
     });
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new SpeciesService(httpClientSpy as any);
