@@ -17,10 +17,6 @@ export const routes: Routes = [
     component: SpeciesListComponent,
   },
   {
-    path: 'species/:id',
-    component: SpeciesListComponent
-  },
-  {
     path: 'character/:id',
     component : CharacterDetailsComponent
   },
