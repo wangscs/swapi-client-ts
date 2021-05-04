@@ -6,12 +6,7 @@ import { Observable } from "rxjs";
 import Character from "../models/Character";
 import { CharacterServiceAbstract } from './character-service-abstract';
 
-export interface ApiResponse {
-  count: number,
-  next: string,
-  previous: string,
-  results: Character[],
-}
+import ApiResponse from "../shared/ApiResponse";
 
 @Injectable({
   providedIn: 'root'

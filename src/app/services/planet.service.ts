@@ -2,13 +2,7 @@ import { Injectable } from '@angular/core';
 import { Planets } from '../models/planets';
 import { HttpClient } from "@angular/common/http"
 
-// API Response that is returned from the API Call
-interface APIResponse {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results: Planets[];
-}
+import ApiResponse from "../shared/ApiResponse";
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +19,6 @@ export class PlanetService {
 
   // Returns a list of all the planets in the API as an observable
   getAll(){
-    return this.http.get<APIResponse>(this.endpoint);
+    return this.http.get<ApiResponse>(this.endpoint);
   }
 }
