@@ -31,12 +31,7 @@ describe('SpeciesService', () => {
   });
 
   it('should get a species by id', () => {
-<<<<<<< HEAD:src/tests/species.service.spec.ts
     let index = 1;
-=======
-    let index = getIndex(species.results[0].url);
-
->>>>>>> created a helper function for GetById test:src/app/services/species.service.spec.ts
     httpClientSpy.get.and.returnValue(of(species.results[index]));
     service.getById(getIndex(species.results[0].url)).subscribe(data => {
       expect(data).toEqual(species.results[index]);

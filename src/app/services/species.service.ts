@@ -3,16 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Species from '../models/Species';
 
-<<<<<<< HEAD
 import ApiResponse from "../shared/ApiResponse";
-=======
-export interface ApiResponse {
-  count: string;
-  next?: string;
-  previous?: string;
-  results: Species[];
-}
->>>>>>> Fixed a typo with error
 
 @Injectable({
   providedIn: 'root'
