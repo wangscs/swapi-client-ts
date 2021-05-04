@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule} from '@angular/common/http/testing';
-import { CharacterService, ApiResponse } from './character.service';
+import { CharacterService } from './character.service';
 
-import { Observable, of } from "rxjs";
+import { of } from "rxjs";
 
 import Character from '../models/Character';
 import characters from "../Character.json";

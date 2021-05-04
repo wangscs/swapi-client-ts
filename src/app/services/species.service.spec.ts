@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import species from '../Species.json';
@@ -10,7 +10,7 @@ describe('SpeciesService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule]
+      imports: [HttpClientTestingModule]
     });
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new SpeciesService(httpClientSpy as any);
@@ -29,9 +29,13 @@ describe('SpeciesService', () => {
   });
 
   it('should get a species by id', () => {
-    httpClientSpy.get.and.returnValue(of(species.results[0]));
-    service.getById(0).subscribe(data => {
-      expect(data).toEqual(species.results[0]);
+    let indexURL = species.results[0].url.slice(0,-1);
+    let lastSlash: number = indexURL.lastIndexOf('/');
+    let index: number = +indexURL.slice(lastSlash + 1);
+
+    httpClientSpy.get.and.returnValue(of(species.results[index]));
+    service.getById(index).subscribe(data => {
+      expect(data).toEqual(species.results[index]);
     });
   });
 });
