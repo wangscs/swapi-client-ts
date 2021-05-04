@@ -1,18 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { Planets } from '../models/planets';
+import { Planets } from '../models/Planets';
 import { PlanetMockServiceService } from './data/planet-mock-service.service';
 
 import { PlanetService } from '../services/planet.service';
 
 // API Response that is returned from the API Call
-interface APIResponse {
-  count?: number;
-  next?: string;
-  previous?: string;
-  results: Planets[];
-}
+// import { APIResponse } from '../shared/ApiResponse'
 
 // A test API Response used for testing
 const APIResponse1: {} = {
@@ -53,7 +48,7 @@ describe('PlanetService', () => {
   });
 
   it('should get the information of the planet', () => {
-    let planets: Planets = new Planets();
+    // let planets: Planets = new Planets();
     httpServiceSpy.get.and.returnValue(of(APIResponse1));
     service.getAll().subscribe( data => {
       expect(data.results).toEqual(service.planets);

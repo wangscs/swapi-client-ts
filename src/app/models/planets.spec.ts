@@ -1,4 +1,4 @@
-import { Planets } from './planets';
+import { Planets } from './Planets';
 
 describe('Planets', () => {
   it('should create an instance', () => {
