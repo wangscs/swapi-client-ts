@@ -7,12 +7,12 @@ import { SpeciesService } from './species.service';
 
 describe('SpeciesService', () => {
   let service: SpeciesService;
-  let httpClientSpy: {get: jasmine.Spy};
+  let httpClientSpy: { get: jasmine.Spy };
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientModule ],
-      providers: [ HttpClient ],
+      imports: [HttpClientModule],
+      providers: [HttpClient],
     });
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new SpeciesService(httpClientSpy as any);

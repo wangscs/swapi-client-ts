@@ -7,13 +7,12 @@ import { NavComponent } from './components/nav/nav.component';
 import { PlanetComponent } from './components/planet/planet.component';
 
 import { SpeciesListComponent } from './components/species-list/species-list.component';
-import { CharacterComponent } from './character/character.component';
-import { CharacterListComponent } from './character-list/character-list.component';
-import { CharacterDetailsComponent } from './character-details/character-details.component';
+import { CharacterComponent } from './components/character/character.component';
+import { CharacterListComponent } from './components/character-list/character-list.component';
+import { CharacterDetailsComponent } from './components/character-details/character-details.component';
 import { SpeciesDetailsComponent } from './components/species-details/species-details.component';
 import { SpeciesPageComponent } from './components/species-page/species-page.component';
 import { PlanetsListComponent } from './components/planets-list/planets-list.component';
-import { SpeciesService } from './services/species.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -24,10 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     SpeciesListComponent,
     CharacterComponent,
     CharacterListComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
     SpeciesDetailsComponent,
     SpeciesPageComponent,
-    PlanetsListComponent,
+    PlanetsListComponent
   ],
   imports: [
     AppRoutingModule,
