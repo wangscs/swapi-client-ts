@@ -9,14 +9,21 @@ import { PlanetsListComponent } from './components/planets-list/planets-list.com
 
 export const routes: Routes = [
   {
-    path: 'people/:page',
+    path: 'people/:id',
     component: CharacterListComponent
   },
   {
     path: 'species',
     component: SpeciesListComponent,
   },
-  { path: 'character/:id', component : CharacterDetailsComponent},
+  {
+    path: 'species/:id',
+    component: SpeciesListComponent
+  },
+  {
+    path: 'character/:id',
+    component : CharacterDetailsComponent
+  },
   {
     path: 'planets',
     component: PlanetsListComponent,
