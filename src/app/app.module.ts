@@ -21,12 +21,12 @@ import { SpeciesListComponent } from './components/species-list/species-list.com
     SpeciesListComponent,
     SpeciesDetailsComponent,
     SpeciesPageComponent,
-    PlanetsListComponent,
+    PlanetsListComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
-    CharacterModule,
+    CharacterModule
   ],
   providers: [],
   bootstrap: [LandingPageComponent]

@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import Species from 'src/app/models/Species';
+import { SpeciesService } from 'src/app/services/species.service';
 
 @Component({
   selector: 'app-species-list',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpeciesListComponent implements OnInit {
 
-  constructor() { }
+  species: Species[] = [];
+  constructor(private service: SpeciesService) { }
 
   ngOnInit(): void {
+    this.service.getAll().subscribe(species => {
+      this.species = species.results;
+    });
   }
 
 }

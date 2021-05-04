@@ -13,9 +13,7 @@ describe('SpeciesListComponent', () => {
       imports: [ HttpClientModule ],
       declarations: [ SpeciesListComponent ]
     })
-    
     .compileComponents();
-    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
   }));
 
   beforeEach(() => {
