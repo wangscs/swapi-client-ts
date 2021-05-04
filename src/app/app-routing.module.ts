@@ -6,17 +6,21 @@ import { PlanetsListComponent } from './components/planets-list/planets-list.com
 
 
 export const routes: Routes = [
-    {
-      path: 'people',
-      loadChildren: () => import('./modules/character.module').then(mod => mod.CharacterModule),
-    },
-    {
+  {
+    path: 'people',
+    loadChildren: () => import('./modules/character.module').then(mod => mod.CharacterModule),
+  },
+  {
     path: 'species',
-    component: SpeciesListComponent,
+    component: SpeciesListComponent
+  },
+  {
+    path: 'species/:id',
+    component: SpeciesListComponent
   },
   {
     path: 'planets',
-    component: PlanetsListComponent,
+    component: PlanetsListComponent
   }
 ];
 

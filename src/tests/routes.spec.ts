@@ -25,4 +25,10 @@ describe('App Routes', () => {
     tick();
     expect(location.path()).toBe('/species');
   }));
+
+  it('should navigate to species/1 component', fakeAsync(() => {
+    router.navigate(['species/1']);
+    tick();
+    expect(location.path()).toBe('/species/1');
+  }));
 });
