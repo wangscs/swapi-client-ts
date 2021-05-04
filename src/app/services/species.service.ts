@@ -3,7 +3,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import Species from '../models/Species';
 
-import ApiResponse from "../shared/ApiResponse";
+export interface ApiResponse {
+  count: string;
+  next?: string;
+  previous?: string;
+  results: Species[];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -20,16 +25,15 @@ export class SpeciesService {
     return this.http.get<ApiResponse>(this.apiURL);
   }
 
-  getById(id: number): Observable<any>{
+  getById(id: number): Observable<any> {
     return this.http.get(this.apiURL + id);
   }
 
-  getNextPage(){
-
+  getNextPage() {
+    return null;
   }
 
-  getPrevPage(){
-
+  getPrevPage() {
+    return null;
   }
-
 }
