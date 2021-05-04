@@ -4,15 +4,16 @@ import { Observable } from 'rxjs';
 import Species from '../models/Species';
 
 export interface ApiResponse {
-  count: string,
-  next?: string,
-  previous?: string,
+  count: string;
+  next?: string;
+  previous?: string;
   results: Species[];
 }
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class SpeciesService {
 
   species: Species[] = [];
