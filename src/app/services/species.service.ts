@@ -20,7 +20,6 @@ export class SpeciesService {
     return this.http.get<ApiResponse>(this.apiURL);
   }
 
-<<<<<<< HEAD
   getById(id: number): Observable<any>{
     return this.http.get(this.apiURL + id);
   }
@@ -33,17 +32,4 @@ export class SpeciesService {
 
   }
 
-=======
-  getById(id: number): Observable<any> {
-    return this.http.get(this.apiURL + id);
-  }
-
-  getNextPage() {
-    return null;
-  }
-
-  getPrevPage() {
-    return null;
-  }
->>>>>>> d78e9d7 (Refactored THE error)
 }
