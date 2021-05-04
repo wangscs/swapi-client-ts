@@ -1,14 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { CharacterServiceAbstract, MockCharacterService } from '../services/character-service-abstract';
-import { CharacterService } from '../services/character.service';
-
+import { MockCharacterService } from '../../services/character-service-abstract';
+import { CharacterService } from '../../services/character.service';
 import { CharacterDetailsComponent } from './character-details.component';
-
-import { of } from "rxjs";
-
-import { routes } from "../app-routing.module";
+import { routes } from "../../app-routing.module";
 
 describe('CharacterDetailsComponent', () => {
   let component: CharacterDetailsComponent;
@@ -22,8 +18,9 @@ describe('CharacterDetailsComponent', () => {
       imports: [RouterTestingModule.withRoutes(routes)],
       declarations: [ CharacterDetailsComponent ],
       providers: [
-        {provide: CharacterService, useClass: MockCharacterService},
-        // {provide: ActivatedRoute, useValue: {params: of({id: 123})}}
+        {
+          provide: CharacterService, useClass: MockCharacterService
+        },
       ]
     })
     .compileComponents();
