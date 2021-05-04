@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SpeciesPageComponent } from './species-page.component';
 
 describe('SpeciesPageComponent', () => {
@@ -8,9 +7,9 @@ describe('SpeciesPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SpeciesPageComponent ]
+      declarations: [SpeciesPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

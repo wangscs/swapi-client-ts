@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { SpeciesListComponent } from './species-list.component';
 
 describe('SpeciesListComponent', () => {
   let component: SpeciesListComponent;
   let fixture: ComponentFixture<SpeciesListComponent>;
-  let httpClientSpy: {get: jasmine.Spy};
+  let httpClientSpy: { get: jasmine.Spy };
   let html;
 
-  beforeEach(waitForAsync (() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [ HttpClientModule ],
-      declarations: [ SpeciesListComponent ]
+      imports: [HttpClientModule],
+      declarations: [SpeciesListComponent]
     })
-    
-    .compileComponents();
+      .compileComponents();
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
   }));
 

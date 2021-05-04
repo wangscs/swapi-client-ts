@@ -11,5 +11,4 @@ export class SpeciesPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
