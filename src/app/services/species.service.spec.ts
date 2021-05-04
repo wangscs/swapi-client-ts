@@ -21,14 +21,6 @@ describe('SpeciesService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should get all species objects', () => {
-    httpClientSpy.get.and.returnValue(of(species));
-    service.getAll().subscribe(data => {
-      expect(data.results[1]).toEqual(species.results[1]);
-      expect(data.results.length).toEqual(3);
-    });
-  });
-
   it('should get a species by id', () => {
     httpClientSpy.get.and.returnValue(of(species.results[0]));
     service.getById(0).subscribe(data => {
