@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { Planets } from '../models/planets';
-import { PlanetMockServiceService } from './planet-mock-service.service';
+import { Planets } from 'src/app/models/planets';
+import { PlanetMockServiceService } from 'src/app/services/planet-mock-service.service';
+import { PlanetService } from 'src/app/services/planet.service';
 
-import { PlanetService } from './planet.service';
+
 
 // API Response that is returned from the API Call
 interface APIResponse {

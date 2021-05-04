@@ -1,6 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-
-import { PlanetMockServiceService } from './planet-mock-service.service';
+import { PlanetMockServiceService } from 'src/app/services/planet-mock-service.service';
 
 describe('PlanetMockServiceService', () => {
   let service: PlanetMockServiceService;

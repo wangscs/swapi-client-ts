@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { MockCharacterService } from '../../services/character-service-abstract';
+import { MockCharacterService } from '../../tests/data/character-service-abstract';
 import { CharacterService } from '../../services/character.service';
 import { CharacterDetailsComponent } from './character-details.component';
 import { routes } from "../../app-routing.module";
