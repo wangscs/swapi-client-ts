@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Planets } from 'src/app/models/Planets';
+import { Planets } from '../../models/planets';
 
 @Component({
   selector: 'app-planet',

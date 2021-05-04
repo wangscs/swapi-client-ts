@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import { Planets } from '../models/Planets';
+import { Planets } from '../models/planets';
 import { PlanetMockServiceService } from './data/planet-mock-service.service';
 
 import { PlanetService } from '../services/planet.service';

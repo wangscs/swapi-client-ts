@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Planets } from '../models/Planets';
+import { Planets } from '../models/planets';
 import { HttpClient } from "@angular/common/http"
 
 import ApiResponse from "../shared/ApiResponse";

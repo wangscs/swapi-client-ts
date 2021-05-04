@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Planets } from 'src/app/models/Planets';
+import { Planets } from '../../models/planets';
 import { PlanetService } from 'src/app/services/planet.service';
 
 

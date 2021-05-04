@@ -25,8 +25,4 @@ describe('PlanetComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // it('should render the h1 as Planets in a Galexy far far away...', () => {
-  //   expect(fixture.nativeElement.querySelector('#title').innerHTML).toMatch('Planets in a Galexy far far away...');
-  // });
 });
