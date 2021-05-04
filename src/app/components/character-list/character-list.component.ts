@@ -21,7 +21,7 @@ export class CharacterListComponent implements OnInit {
     this.page = +this.activatedRoute.snapshot.paramMap.get('page');
     
     this.characterService.getCharacters(this.page).subscribe( (data) => {
-      this.characterList = data.results;
+      this.characterList = data;
     });
   }
 

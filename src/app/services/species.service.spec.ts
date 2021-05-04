@@ -1,7 +1,8 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import species from '../Species.json';
+import species from '../tests/data/Species.json';
+
 import { SpeciesService } from './species.service';
 
 describe('SpeciesService', () => {
