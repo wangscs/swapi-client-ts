@@ -23,19 +23,19 @@ describe('SpeciesService', () => {
     expect(service).toBeTruthy();
   });
 
-
-  it('should get a species by id', () => {
-    httpClientSpy.get.and.returnValue(of(species));
+  it('should get all species', () => {
+    httpClientSpy.get.and.returnValue(of(species.results));
     service.getAll().subscribe(data => {
-      expect(data.results[1]).toEqual(species[1]);
+      expect(data.results[1]).toEqual(species.results[1]);
       expect(data.results.length).toEqual(3);
     });
   });
 
   it('should get a species by id', () => {
-    httpClientSpy.get.and.returnValue(of(species.results[0]));
-    service.getById(0).subscribe(data => {
-      expect(data).toEqual(species.results[0]);
+    let index = 1;
+    httpClientSpy.get.and.returnValue(of(species.results[index]));
+    service.getById(index).subscribe(data => {
+      expect(data).toEqual(species.results[index]);
     });
   });
 });
