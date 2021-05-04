@@ -1,9 +1,9 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
-import species from '../tests/data/Species.json';
+import species from 'src/app/tests/data/Species.json';
 
-import { SpeciesService } from './species.service';
+import { SpeciesService } from '../services/species.service';
 
 describe('SpeciesService', () => {
   let service: SpeciesService;
@@ -20,6 +20,15 @@ describe('SpeciesService', () => {
 
   it('should be created', () => {
     expect(service).toBeTruthy();
+  });
+
+  it('should get all species objects', () => {
+    httpClientSpy.get.and.returnValue(of(species));
+    service.getAll().subscribe(data => {
+      expect(data.results[0].name).toContain('Human');
+      expect(data.results[1].name).toContain('Driod');
+      expect(data.results[2].name).toContain('Wookie');
+    });
   });
 
   it('should get a species by id', () => {
